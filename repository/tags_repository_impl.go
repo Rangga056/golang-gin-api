@@ -54,7 +54,7 @@ func (t *TagsRepositoryImpl) Update(tags model.Tags) {
 }
 
 // findAll implements TagsRepository.
-func (t *TagsRepositoryImpl) findAll() []model.Tags {
+func (t *TagsRepositoryImpl) FindAll() []model.Tags {
 	var tags []model.Tags
 	result := t.Db.Find(&tags)
 	helper.ErrorPanic(result.Error)

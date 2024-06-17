@@ -21,20 +21,81 @@ This project is a RESTful API implemented using the Gin framework in Go (Golang)
 The project structure is organized as follows:
 
 ```
-.
-├── main.go          # Main entry point of the application
-├── repository       # Package containing repository implementations
-│   ├── repository.go    # Interface definition for repositories
-│   └── tags_repository.go    # Implementation of TagsRepository using GORM
-├── data
-│   └── request      # Request data structures
-│   └── response      # Response data structures
-├── model            # Data models used in the application
-│   └── tags.go      # Tags data model
-├── helper           # Helper functions and utilities
-│   └── error.go     # Error handling utilities
-└── README.md        # Project documentation (you are here)
+gin-api/
+│
+├── controllers/
+│   └── tags_controller.go
+│
+├── data/
+│ ├── request/
+│ │ ├── create_tags_request.go
+│ │ └── update_tags_request.go
+│ │
+│ ├── response/
+│ ├── tags_response.go
+│ └── web_response.go
+│
+├── helper/
+│  └── error.go
+│
+├── model/
+│ └── tags.go
+│
+├── repository/
+│ ├── tags_repository.go
+│ └── tags_repository_impl.go
+│
+├── service/
+│ ├── tags_service.go
+│ └──  tags_service_impl.go
+│
+├── README.md
+├── go.mod
+├── go.sum
+└──  main.go
 ```
+
+### Folder Descriptions
+
+- **controllers**: Contains handler functions to process incoming HTTP requests and manage API endpoints.
+
+  - `tags_controller.go`: Manages endpoints related to tags, such as creating, updating, and retrieving tags.
+
+- **data**: Contains data transfer objects (DTOs) for handling requests and responses.
+
+  - **request**: DTOs for incoming requests.
+    - `create_tags_request.go`: Defines the structure for creating tags requests.
+    - `update_tags_request.go`: Defines the structure for updating tags requests.
+  - **response**: DTOs for outgoing responses.
+    - `tags_response.go`: Defines the structure for tags response data.
+    - `web_response.go`: Defines a general structure for web responses.
+
+- **helper**: Contains utility functions and helpers.
+
+  - `error.go`: Handles error formatting and propagation.
+
+- **model**: Contains the data models representing the entities in the application.
+
+  - `tags.go`: Defines the data model for tags.
+
+- **repository**: Contains the repository interfaces and implementations for data persistence.
+
+  - `tags_repository.go`: Defines the interface for tags repository.
+  - `tags_repository_impl.go`: Implements the tags repository interface.
+
+- **service**: Contains the service interfaces and implementations for business logic.
+
+  - `tags_service.go`: Defines the interface for tags service.
+  - `tags_service_impl.go`: Implements the tags service interface.
+
+- **main.go**: The entry point of the application.
+
+- **go.mod**: Defines the module and its dependencies.
+
+- **go.sum**: Contains the checksum of the module dependencies.
+
+This structure ensures a clean separation of concerns and makes it easier to navigate and maintain the codebase.
+
 ## Setup and Installation
 
 ### 1. Clone the repository:
@@ -43,6 +104,7 @@ The project structure is organized as follows:
 git clone <repository_url>
 cd <repository_directory>
 ```
+
 ### 2. Installing dependancies:
 
 ```bash

@@ -23,6 +23,9 @@ The project structure is organized as follows:
 ```
 gin-api/
 │
+├── config/
+│   └── config.go
+│
 ├── controllers/
 │   └── tags_controller.go
 │
@@ -45,6 +48,9 @@ gin-api/
 │ ├── tags_repository.go
 │ └── tags_repository_impl.go
 │
+├── router/
+│ └── router.go
+│
 ├── service/
 │ ├── tags_service.go
 │ └──  tags_service_impl.go
@@ -56,6 +62,10 @@ gin-api/
 ```
 
 ### Folder Descriptions
+
+- **config**: Contains configuration files for the application.
+
+  - `config.go`: Manages configuration settings for different environments (e.g., development, production)..
 
 - **controllers**: Contains handler functions to process incoming HTTP requests and manage API endpoints.
 
@@ -82,6 +92,10 @@ gin-api/
 
   - `tags_repository.go`: Defines the interface for tags repository.
   - `tags_repository_impl.go`: Implements the tags repository interface.
+
+- **router**: Contains the router setup for the application.
+
+  - `router.go`: Sets up and configures the Gin router with all the defined routes and middleware.
 
 - **service**: Contains the service interfaces and implementations for business logic.
 
